@@ -34,10 +34,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
     
     let node_id = format!("polyneuron-{}", chrono::Utc::now().timestamp());
-    let stake_amount = ethers::utils::parse_ether("100")?; // 100 MATIC
+    let stake_amount = ethers::utils::parse_ether("0.1")?; // 0.1 MATIC (testnet)
     
     println!("📝 Node ID: {}", node_id);
-    println!("💰 Stake: 100 MATIC");
+    println!("💰 Stake: 0.1 MATIC (testnet amount)");
     
     let tx = contract
         .method::<_, ()>("registerCognitiveNode", node_id)?

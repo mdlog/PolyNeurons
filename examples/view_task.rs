@@ -37,10 +37,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
     
     // Get task ID from args or default to 1
-    let task_id = std::env::args()
-        .nth(1)
-        .and_then(|s| s.parse::<u64>().ok())
-        .unwrap_or(1);
+    // Note: When run via cargo, args start from index 0 as the binary name
+    let args: Vec<String> = std::env::args().collect();
+    let task_id = if args.len() > 1 {
+        args[1].parse::<u64>().unwrap_or(1)
+    } else {
+        1
+    };
     
     println!("🔍 Fetching Task #{}...", task_id);
     println!("");

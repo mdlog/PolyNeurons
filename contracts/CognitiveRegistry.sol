@@ -33,7 +33,7 @@ contract CognitiveRegistry is Ownable, ReentrancyGuard {
     
     address[] public nodeList;
     uint256 public taskCounter;
-    uint256 public minStakeAmount = 100 ether; // 100 MATIC
+    uint256 public minStakeAmount = 0.1 ether; // 0.1 MATIC (cheap for testnet)
     
     event NodeRegistered(address indexed validator, string nodeId);
     event NodeDeactivated(address indexed validator);

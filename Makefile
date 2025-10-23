@@ -70,3 +70,6 @@ submit-task-cheap:
 
 view-task:
 	@./run-example.sh view_task
+
+view-node:
+	@./run-example.sh view_node
