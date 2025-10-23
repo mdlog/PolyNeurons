@@ -11,6 +11,14 @@ path = "register_node.rs"
 name = "submit_task"
 path = "submit_task.rs"
 
+[[example]]
+name = "submit_task_cheap"
+path = "submit_task_cheap.rs"
+
+[[example]]
+name = "view_task"
+path = "view_task.rs"
+
 [dependencies]
 tokio = { workspace = true }
 ethers = { workspace = true }

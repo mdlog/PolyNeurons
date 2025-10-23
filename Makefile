@@ -64,3 +64,9 @@ register-node:
 
 submit-task:
 	@./run-example.sh submit_task
+
+submit-task-cheap:
+	@./run-example.sh submit_task_cheap
+
+view-task:
+	@./run-example.sh view_task
