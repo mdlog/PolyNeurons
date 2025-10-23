@@ -29,13 +29,13 @@ deploy:
 run-engine:
 	@echo "🧠 Starting Cognitive Engine..."
 	@if [ ! -f .env ]; then cp .env.example .env; fi
-	cd cognitive-engine && cargo run --release
+	@export $$(cat .env | grep -v '^#' | xargs) && cd cognitive-engine && cargo run --release
 
 # Run validator plugin
 run-validator:
 	@echo "🔌 Starting Validator Plugin..."
 	@if [ ! -f .env ]; then cp .env.example .env; fi
-	cd validator-plugin && cargo run --release
+	@export $$(cat .env | grep -v '^#' | xargs) && cd validator-plugin && cargo run --release
 
 # Install dependencies
 install:
